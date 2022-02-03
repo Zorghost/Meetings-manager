@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1071673131287",
+    "project_id": "meetingmana",
+    "storage_bucket": "meetingmana.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071673131287:android:b17e0eed84b443f0aa3752",
+        "android_client_info": {
+          "package_name": "de.htw_berlin.meetingmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1071673131287-tdo8dt46p4d81okrltip7i8sk4r6qnf7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "de.htw_berlin.meetingmanager",
+            "certificate_hash": "fdc46ab9a99d4f504e52ab52af7edd1b17ae57bc"
+          }
+        },
+        {
+          "client_id": "1071673131287-22doh2jar6l8pd02f08bmkvebcl4k7c6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGMkS90vtsgDWNMvYK4VS4ZhApRVpYJOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1071673131287-22doh2jar6l8pd02f08bmkvebcl4k7c6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
