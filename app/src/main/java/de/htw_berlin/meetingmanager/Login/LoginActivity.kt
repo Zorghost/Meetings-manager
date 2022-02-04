@@ -1,8 +1,10 @@
 package de.htw_berlin.meetingmanager.Login
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -11,6 +13,8 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import de.htw_berlin.meetingmanager.R
 import android.view.View
+import com.firebase.ui.auth.AuthUI
+import com.firebase.ui.auth.IdpResponse
 
 import de.htw_berlin.meetingmanager.Register.RegisterActivity
 import de.htw_berlin.meetingmanager.meeting.MeetingActivity
@@ -21,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var etPass: EditText
     private lateinit var btnLogIn: Button
-
+    private var TAG : String = "Login Activity"
     // create Firebase authentication object
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,16 +47,11 @@ class LoginActivity : AppCompatActivity() {
         val pass = etPass.text.toString()
 
         // check pass
-        if (email.isBlank() || pass.isBlank() ) {
+        if (email.isBlank() || pass.isBlank() )
+        {
             Toast.makeText(this, "Email or Password can't be blank", Toast.LENGTH_SHORT).show()
             return
         }
-
-
-        // If all credential are correct
-        // We call createUserWithEmailAndPassword
-        // using auth object and pass the
-        // email and pass in it.
 
         auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener(this) {
             if (it.isSuccessful) {
@@ -64,8 +63,9 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-    fun onLoginClick(View: View?) {
+    fun onClick(View: View?) {
         startActivity(Intent(this, RegisterActivity::class.java))
         overridePendingTransition(de.htw_berlin.meetingmanager.R.anim.slide_in_right, de.htw_berlin.meetingmanager.R.anim.stay)
     }
 }
+
